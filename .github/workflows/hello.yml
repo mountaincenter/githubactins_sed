@@ -17,7 +17,7 @@ jobs:
         run: cat hello.json
 
       - name: modify json file
-        run: sed -i 's/${hello}/${{ secrets.HELLO_WORLD }}/g' hello.json' 's/${test}/${{ secrets.TEST }}/g' hello.json
+        run: sed -i 's/${hello}/${{ secrets.HELLO_WORLD }}/g' -i 's/${test}/${{ secrets.TEST }}/g' hello.json
 
       - name: after modify json file
         run: cat hello.json
