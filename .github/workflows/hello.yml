@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  HELLO_WORLD: HelloWorld
+  HELLO_WORLD: ${{ secrets.HELLO_WORLD }}
 
 jobs:
   hello:
