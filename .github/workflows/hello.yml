@@ -1,0 +1,26 @@
+name: hello
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  HELLO_WORLD: HelloWorld
+
+jobs:
+  hello:
+    name: HelloWorld sample
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: before modify json file
+        run: cat hello.json
+
+      - name: modify json file
+        run: sed -i 's/${hello}/${{ env.HELLO_WORLD }}/g' hello.json
+
+      - name: after modify json file
+        run: cat hello.json
